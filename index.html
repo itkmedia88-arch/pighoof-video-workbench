@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f4f3ee">
+  <meta name="description" content="猪脚AI短视频工作台。从一句需求开始，确认脚本、分镜与费用，再生成自己的视频。">
+  <title>猪脚AI · 视频工作台</title>
+  <link rel="icon" href="./art/brand.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./app.mjs"></script>
+</head>
+<body>
+  <div class="workspace">
+    <aside class="sidebar" aria-label="任务导航">
+      <button id="close-nav" class="icon-button phone-only" aria-label="关闭任务导航">×</button><a class="brand" href="./"><img src="./art/brand.svg" alt=""><span>猪脚<span class="brand-ai">AI</span><small>VIDEO WORKBENCH</small></span></a>
+      <button id="new-task" class="new-task"><span>＋</span> 开始新创作</button>
+      <p class="nav-label">你的创作工具 <span>08</span></p>
+      <nav id="workflow-nav" aria-label="视频能力"></nav>
+      <div class="history-heading"><p class="nav-label">最近的创作</p><button id="refresh-history" class="icon-button" aria-label="刷新历史">↻</button></div>
+      <div id="history" class="history"><p class="muted">任务会保存在本机。</p></div>
+      <div class="sidebar-footer"><span class="avatar-mark">猪</span><div><strong>猪脚AI短视频</strong><small>把重复的事，交给 AI</small></div></div>
+    </aside>
+    <main class="main">
+      <header class="topbar"><button id="nav-toggle" class="icon-button phone-only" aria-label="打开任务导航">≡</button><div><span class="breadcrumb">创作空间 /</span> <strong id="active-title">开始你的下一支视频</strong></div><span id="environment" class="environment">检测工作环境</span><button id="studio-toggle" class="icon-button mobile-only" aria-label="打开创作面板">☷</button></header>
+      <div id="notice" class="notice" role="status" hidden></div>
+      <div class="main-content" id="main-scroll">
+        <section id="welcome" class="welcome">
+          <div class="welcome-heading"><p class="eyebrow"><span></span> YOUR IDEAS, IN MOTION</p><h1>好视频，<br>从一句话开始<span class="orange-dot">。</span></h1><p>说出想法，放入素材。<br>和你的 AI 搭档，一起把创意变成画面。</p><img class="hero-art" src="./art/hero.svg" alt="纸张、分镜和视频播放器组成的创作桌面"></div>
+          <div class="section-heading"><h2>今天，想创作什么？</h2><span>原创流程示意 · 从素材到成片</span></div>
+          <div class="workflow-grid" id="workflow-grid"></div>
+        </section>
+        <section id="conversation" class="conversation" aria-label="创作对话" hidden><div id="task-intro" class="task-intro"></div><div id="messages" aria-live="polite"></div></section>
+      </div>
+      <section class="composer-wrap" aria-label="输入创作需求">
+        <div id="attachment-list" class="attachment-list"></div>
+        <form id="composer" class="composer"><label class="sr-only" for="message">创作需求</label><textarea id="message" rows="2" placeholder="描述你的想法，或先选择一个创作工具…"></textarea><div class="composer-tools"><div class="composer-actions"><button type="button" id="attach" class="attach-button" aria-label="上传素材">＋ <span>添加素材</span></button><input type="file" id="file-input" multiple hidden><span id="selected-tool" class="selected-tool">先选一个工具</span></div><button type="submit" id="send" class="send-button" aria-label="发送创作需求">开始策划 <span>↑</span></button></div></form>
+        <div class="composer-note"><label id="codex-option"><input type="checkbox" id="use-codex"> 本次使用 Codex 策划（发送需求及最多 3 张上传的参考图片，消耗账户额度）</label><span id="privacy-note">素材先保存在本机 · 执行前确认费用与外传</span></div>
+      </section>
+    </main>
+    <aside class="studio" id="studio" aria-label="创作面板"><div class="studio-header"><div><p class="eyebrow">CREATIVE DESK</p><h2>创作面板</h2></div><button id="close-studio" class="icon-button mobile-only" aria-label="关闭创作面板">×</button><span class="studio-badge">由你确认</span></div><div id="studio-content"></div></aside>
+  </div>
+  <dialog id="approval-dialog"><form id="approval-form"><p class="eyebrow">ONE RUN, ONE APPROVAL</p><h2>确认本次执行</h2><p id="approval-summary"></p><p id="quote-source" class="muted"></p><div class="cost-fields" id="cost-fields"><label>已核对费用上限（元）<input type="number" id="estimated-cost" readonly min="0" step="0.01" required placeholder="填写已核对的费用"></label><label>本次批准预算（元）<input type="number" id="budget" min="0" step="0.01" required placeholder="不得低于预估费用"></label></div><p id="cost-note" class="muted">本地执行费用为 0 元；远程费用由提供方收取。这里不自动查询价格，需核对当前配置与报价。</p><label class="consent"><input type="checkbox" id="upload-consent"> 同意本次将所需素材与提示词发送至已配置的外部服务</label><label class="consent"><input type="checkbox" id="run-consent" required> 我已检查脚本、分镜和设置，确认本次执行及费用上限</label><div class="dialog-actions"><button type="button" id="cancel-approval" class="secondary-button">再检查一下</button><button type="submit" class="primary-button">确认并执行</button></div></form></dialog>
+</body>
+</html>
