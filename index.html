@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#f4f3ee">
-  <meta name="description" content="猪脚AI短视频工作台。从一句需求开始，确认脚本、分镜与费用，再生成自己的视频。">
-  <title>猪脚AI · 视频工作台</title>
+  <meta name="description" content="AI新个体视频工作台。从一句需求开始，确认脚本、分镜与费用，再生成自己的视频。">
+  <title>AI新个体 · 视频工作台</title>
   <link rel="icon" href="./art/brand.svg" type="image/svg+xml">
   <link rel="stylesheet" href="./styles.css">
   <script type="module" src="./app.mjs"></script>
@@ -12,13 +12,13 @@
 <body>
   <div class="workspace">
     <aside class="sidebar" aria-label="任务导航">
-      <button id="close-nav" class="icon-button phone-only" aria-label="关闭任务导航">×</button><a class="brand" href="./"><img src="./art/brand.svg" alt=""><span>猪脚<span class="brand-ai">AI</span><small>VIDEO WORKBENCH</small></span></a>
+      <button id="close-nav" class="icon-button phone-only" aria-label="关闭任务导航">×</button><a class="brand" href="./"><img src="./art/brand.svg" alt=""><span>AI新个体<small>VIDEO WORKBENCH</small></span></a>
       <button id="new-task" class="new-task"><span>＋</span> 开始新创作</button>
       <p class="nav-label">你的创作工具 <span>08</span></p>
       <nav id="workflow-nav" aria-label="视频能力"></nav>
       <div class="history-heading"><p class="nav-label">最近的创作</p><button id="refresh-history" class="icon-button" aria-label="刷新历史">↻</button></div>
       <div id="history" class="history"><p class="muted">任务会保存在本机。</p></div>
-      <div class="sidebar-footer"><span class="avatar-mark">猪</span><div><strong>猪脚AI短视频</strong><small>把重复的事，交给 AI</small></div></div>
+      <div class="sidebar-footer"><span class="avatar-mark">AI</span><div><strong>AI新个体</strong><small>把重复的事，交给 AI</small></div></div>
     </aside>
     <main class="main">
       <header class="topbar"><button id="nav-toggle" class="icon-button phone-only" aria-label="打开任务导航">≡</button><div><span class="breadcrumb">创作空间 /</span> <strong id="active-title">开始你的下一支视频</strong></div><span id="environment" class="environment">检测工作环境</span><button id="studio-toggle" class="icon-button mobile-only" aria-label="打开创作面板">☷</button></header>

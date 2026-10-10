@@ -5,7 +5,7 @@ export const workflows = [
  {id:'auto-edit',title:'自动剪辑',subtitle:'从口播素材到清晰的表达',icon:'edit',color:'#729e8e',inputHint:'上传口播视频和可选字幕，告诉我想保留或删除的片段。',prompts:['查看素材，给我剪辑建议','按确认的时间段剪辑并导出'],inputs:['口播视频','字幕或剪辑时间段']},
  {id:'vox-video',title:'Vox风格视频',subtitle:'让知识变成运动的纸张与图解',icon:'paper',color:'#be9259',inputHint:'提供讲解稿、图片和旁白，先确认分镜与每段的时间。',prompts:['把这段文案变成纸张拼贴讲解','先做一版可编辑的动画分镜'],inputs:['讲解稿','旁白或时间轴']},
  {id:'sticker-talk',title:'动画贴纸口播',subtitle:'让重点在合适的时刻出现',icon:'sticker',color:'#aa83a8',inputHint:'上传口播视频，再提供带时间的字幕或想强调的句子。',prompts:['用动态贴纸突出这几个重点','保留原声，增加字幕和卡片动画'],inputs:['口播视频','字幕时间轴']},
- {id:'digital-human',title:'猪脚数字人口播',subtitle:'从一段文案到数字人与动画',icon:'avatar',color:'#789bb5',inputHint:'提供确认后的口播稿，以及已有的数字人和声音配置。',prompts:['先优化我的数字人口播稿','把口播做成带图解的讲解视频'],inputs:['口播稿','已配置数字人和声音']},
+ {id:'digital-human',title:'数字人口播',subtitle:'从一段文案到数字人与动画',icon:'avatar',color:'#789bb5',inputHint:'提供确认后的口播稿，以及已有的数字人和声音配置。',prompts:['先优化我的数字人口播稿','把口播做成带图解的讲解视频'],inputs:['口播稿','已配置数字人和声音']},
  {id:'motion-effects',title:'动画效果',subtitle:'把文字和图片做成可编辑的动效',icon:'motion',color:'#8ca377',inputHint:'告诉我要展示的文字或上传图片，选择纸页、卡片、箭头或关键词动效。',prompts:['做一段关键词和卡片入场动画','用图片做一个纸张拼贴开场'],inputs:['文字或图片','效果要求']}
 ];
 export const workflowById = id => workflows.find(w=>w.id===id);
