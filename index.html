@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#f4f3ee">
-  <meta name="description" content="AI新个体视频工作台。从一句需求开始，确认脚本、分镜与费用，再生成自己的视频。">
+  <meta name="description" content="AI新个体视频工作台。上传一张产品图，确认真实卖点与脚本，生成 4 秒竖屏纯产品视频。当前需邀请码试用。">
   <title>AI新个体 · 视频工作台</title>
   <link rel="icon" href="./art/brand.svg" type="image/svg+xml">
   <link rel="stylesheet" href="./styles.css">
@@ -17,7 +17,7 @@
       <p class="nav-label">你的创作工具 <span>08</span></p>
       <nav id="workflow-nav" aria-label="视频能力"></nav>
       <div class="history-heading"><p class="nav-label">最近的创作</p><button id="refresh-history" class="icon-button" aria-label="刷新历史">↻</button></div>
-      <div id="history" class="history"><p class="muted">任务会保存在本机。</p></div>
+      <div id="history" class="history"><p class="muted">进入制作网站后，查看自己的任务。</p></div>
       <div class="sidebar-footer"><span class="avatar-mark">AI</span><div><strong>AI新个体</strong><small>把重复的事，交给 AI</small></div></div>
     </aside>
     <main class="main">
@@ -25,8 +25,8 @@
       <div id="notice" class="notice" role="status" hidden></div>
       <div class="main-content" id="main-scroll">
         <section id="welcome" class="welcome">
-          <div class="welcome-heading"><p class="eyebrow"><span></span> YOUR IDEAS, IN MOTION</p><h1>好视频，<br>从一句话开始<span class="orange-dot">。</span></h1><p>说出想法，放入素材。<br>和你的 AI 搭档，一起把创意变成画面。</p><img class="hero-art" src="./art/hero.svg" alt="纸张、分镜和视频播放器组成的创作桌面"></div>
-          <div class="section-heading"><h2>今天，想创作什么？</h2><span>原创流程示意 · 从素材到成片</span></div>
+          <div class="welcome-heading"><p class="eyebrow"><span></span> YOUR IDEAS, IN MOTION</p><h1>一张产品图，<br>开始产品视频<span class="orange-dot">。</span></h1><p>当前试用：4 秒 · 480p · 9:16 · 纯产品。<br>注册后用邀请码激活，核对方案后再生成。<br><a class="primary-button" href="https://anything-unedited-harmonics.ngrok-free.dev/">进入产品视频试用 ↗</a></p><img class="hero-art" src="./art/hero.svg" alt="纸张、分镜和视频播放器组成的创作桌面"></div>
+          <div class="section-heading"><h2>今天，想创作什么？</h2><span>产品视频开放试用 · 其余七项尚未开放</span></div>
           <div class="workflow-grid" id="workflow-grid"></div>
         </section>
         <section id="conversation" class="conversation" aria-label="创作对话" hidden><div id="task-intro" class="task-intro"></div><div id="messages" aria-live="polite"></div></section>
@@ -34,7 +34,7 @@
       <section class="composer-wrap" aria-label="输入创作需求">
         <div id="attachment-list" class="attachment-list"></div>
         <form id="composer" class="composer"><label class="sr-only" for="message">创作需求</label><textarea id="message" rows="2" placeholder="描述你的想法，或先选择一个创作工具…"></textarea><div class="composer-tools"><div class="composer-actions"><button type="button" id="attach" class="attach-button" aria-label="上传素材">＋ <span>添加素材</span></button><input type="file" id="file-input" multiple hidden><span id="selected-tool" class="selected-tool">先选一个工具</span></div><button type="submit" id="send" class="send-button" aria-label="发送创作需求">开始策划 <span>↑</span></button></div></form>
-        <div class="composer-note"><label id="codex-option"><input type="checkbox" id="use-codex"> 本次使用 Codex 策划（发送需求及最多 3 张上传的参考图片，消耗账户额度）</label><span id="privacy-note">素材先保存在本机 · 执行前确认费用与外传</span></div>
+        <div class="composer-note"><label id="codex-option"><input type="checkbox" id="use-codex"> 本次使用 Codex 策划（发送需求及最多 3 张上传的参考图片，消耗账户额度）</label><span id="privacy-note">需邀请码 · 纯产品视频 · 管理员电脑需在线</span></div>
       </section>
     </main>
     <aside class="studio" id="studio" aria-label="创作面板"><div class="studio-header"><div><p class="eyebrow">CREATIVE DESK</p><h2>创作面板</h2></div><button id="close-studio" class="icon-button mobile-only" aria-label="关闭创作面板">×</button><span class="studio-badge">由你确认</span></div><div id="studio-content"></div></aside>
